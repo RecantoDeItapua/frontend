@@ -30,8 +30,7 @@ resident: IResident = {
 }
 
 name: FormControl = new FormControl(null, Validators.minLength(3));
-cpf: FormControl = new FormControl(null, [Validators.minLength(11), Validators.required]);
-email: FormControl = new FormControl(null, Validators.email);
+
 
 
   constructor( 
@@ -71,9 +70,7 @@ email: FormControl = new FormControl(null, Validators.email);
 
 
     fieldValidate(): boolean {
-      return this.name.valid && 
-             this.cpf.valid && 
-             this.email.valid 
+      return this.name.valid 
              
     }
     
