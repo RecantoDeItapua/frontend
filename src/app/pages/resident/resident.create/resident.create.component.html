@@ -13,7 +13,6 @@
               [(ngModel)]="resident.name"
               required
               maxlength="50"
-              [formControl]="name"
                name="name"
                matInput 
                placeholder="Fulano de tal">
@@ -27,7 +26,6 @@
                 <input
                 [(ngModel)]="resident.cpf"
                 required=""
-                [formControl]="cpf"
                 name="cpf"
                  matInput
                  placeholder="000.000.000-00"
@@ -44,7 +42,6 @@
                 <input
                 [(ngModel)]="resident.email"
                  required
-                 [formControl]="email"
                  name="email"
                  matInput 
                  placeholder="fulano@seuemail.com"

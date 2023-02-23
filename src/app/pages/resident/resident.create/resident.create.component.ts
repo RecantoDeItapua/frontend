@@ -1,9 +1,10 @@
+import { Component, OnInit } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { IResident } from './../../../models/residents';
+
 import { ResidentService } from '../../../services/resident.service';
-import { FormControl, Validators } from '@angular/forms';
-import { Component, OnInit } from '@angular/core';
+import { IResident } from './../../../models/residents';
 
 @Component({
   selector: 'app-resident.create',
@@ -22,8 +23,7 @@ resident: IResident = {
   password:'',
   profiles: [],
   date:''
-  //endereço
-  //telefone
+
   
   
 
