@@ -27,4 +27,10 @@ export class PaymentService {
   update(payment: IPayment):Observable<IPayment> {
     return this.http.put<IPayment>(`${API_CONFIG.baseURL}/payments/${payment.id}`, payment);
   }
+
+  delete(id:any):Observable<IPayment> {
+    return this.http.delete<IPayment>(`${API_CONFIG.baseURL}/payments/${id}`)
+  }
+
+
 }

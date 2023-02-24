@@ -1,0 +1,87 @@
+<div class="container" >
+    <button class="print" >
+      <mat-icon>print</mat-icon>
+    </button>   
+      <form class="form"  id="content" #content>
+        <h3>Associação Comunitária Dos Moradores Do Loteamento Recanto De Itapuã</h3>
+          
+              <div class="full-width">
+                  <mat-label>PAGAMENTO:</mat-label>
+                <input
+                [disabled]="true"
+                [(ngModel)]="payment.title"
+                name="title"
+                 matInput
+                >
+              </div>
+  
+              <div class="full-width">
+                  <mat-label>VALOR:</mat-label>
+                  <input
+                  [(ngModel)]="payment.cash"
+                  name="payment"
+                  matInput
+                  [disabled]="true"
+                   >
+              </div>
+  
+              <div class="full-width">
+                <mat-label>PAGAMENTO:</mat-label>
+                <input
+                [(ngModel)]="payment.modePayment"
+                name="modePayment"
+                matInput
+                [disabled]="true"
+                 >
+            </div>
+  
+              <div class="full-width">
+                  <mat-label>DATA DE ABERTURA:</mat-label>
+                  <input
+                  [(ngModel)]="payment.datePayment"
+                  name="datePayment"
+                   matInput
+                   [disabled]="true"
+                  >
+                </div>
+  
+              <div appearance="fill" >
+                  
+                  <mat-label>SITUAÇÃO:</mat-label>
+                  <input
+                  [(ngModel)]="payment.situation"
+                  name="situation"
+                  matInput
+                  [disabled]="true"
+                  >
+               
+               </div>
+  
+               <div class="full-width">
+                  <mat-label>DATA FECHAMENTO:</mat-label>
+                  <input
+                  [(ngModel)]="payment.finishPayment"
+                  name="finishPayment"
+                   matInput
+                   [disabled]="true"
+                  >
+                </div>
+  
+               <div appearance="fill" >
+                  <mat-label>NOME</mat-label>
+                  <input
+                   name="personName"
+                   [(ngModel)]="payment.personName"
+                   matInput
+                   [disabled]="true"
+                   
+                    >
+               </div>
+      </form>
+      <div class="buttons">
+        <button (click)="delete()" mat-button color="warn" >Deletar</button>
+        <button (click)="goBack()" mat-button color="primary">Voltar</button>
+      </div>
+     
+  </div>
+  

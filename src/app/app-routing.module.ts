@@ -1,3 +1,5 @@
+import { PaymentTicketComponent } from './pages/payment/payment.ticket/payment.ticket.component';
+import { PaymentDeleteComponent } from './pages/payment/payment.delete/payment.delete.component';
 import { ConciergeUpdateComponent } from './pages/concierge/concierge.update/concierge.update.component';
 import { ConciergeReadComponent } from './pages/concierge/concierge.read/concierge.read.component';
 import { ConciergeDeleteComponent } from './pages/concierge/concierge.delete/concierge.delete.component';
@@ -65,8 +67,10 @@ const routes: Routes = [
 
     {path:'payments', component: PaymentListComponent},
     {path:'payments/report', component: PaymentReportComponent},
+    {path:'payments/ticket', component: PaymentTicketComponent},
     {path:'payments/create', component: PaymentCreateComponent},
     {path:'payments/update/:id', component: PaymentUpdadeComponent},
+    {path:'payments/delete/:id', component: PaymentDeleteComponent},
     {path:'payments/read/:id', component: PaymentReadComponent},
 
     {path:'annoucements', component: AnnoucementsListComponent},

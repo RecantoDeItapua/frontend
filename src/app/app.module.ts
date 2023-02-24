@@ -80,6 +80,8 @@ import { ConciergeDeleteComponent } from './pages/concierge/concierge.delete/con
 import { ConciergeReadComponent } from './pages/concierge/concierge.read/concierge.read.component';
 import { ConciergeUpdateComponent } from './pages/concierge/concierge.update/concierge.update.component';
 import { ResidentReadComponent } from './pages/resident/resident.read/resident.read.component';
+import { PaymentDeleteComponent } from './pages/payment/payment.delete/payment.delete.component';
+import { PaymentTicketComponent } from './pages/payment/payment.ticket/payment.ticket.component';
 
 
 
@@ -125,7 +127,9 @@ import { ResidentReadComponent } from './pages/resident/resident.read/resident.r
     ConciergeDeleteComponent,
     ConciergeReadComponent,
     ConciergeUpdateComponent,
-    ResidentReadComponent
+    ResidentReadComponent,
+    PaymentDeleteComponent,
+    PaymentTicketComponent
     
 
   ],

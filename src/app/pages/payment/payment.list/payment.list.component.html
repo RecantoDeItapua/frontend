@@ -1,9 +1,14 @@
 
 
 <div class="mat-elevation-z8 container" id="content" #content>  
-  <button class="print" routerLink="report" *ngIf="showComponentByUser()">
+  <div class="buttons">
+    <button class="print" routerLink="report" *ngIf="showComponentByUser()">
       <mat-icon>print</mat-icon>
    </button> 
+   <button routerLink="ticket" *ngIf="showComponentByUser()">Gerar boletos</button>
+
+  </div>
+ 
     <div class="header" *ngIf="showComponentByUser()">
       <h1>Listando Pagamentos</h1>
      <button routerLink="create" mat-raised-button >Novo pagamento</button>
@@ -60,7 +65,10 @@
             <a routerLink="update/{{element.id}}" *ngIf="showComponentByAdmin()">
               <i class="material-icons edit">edit</i>
             </a>
-              <a routerLink="read/{{element.id}}"><i class="material-icons delete">
+            <a routerLink="delete/{{element.id}}" *ngIf="showComponentByAdmin()"><i class="material-icons delete">
+              delete
+              </i></a>
+              <a routerLink="read/{{element.id}}"><i class="material-icons visibility">
                 visibility
                 </i>
               </a>
