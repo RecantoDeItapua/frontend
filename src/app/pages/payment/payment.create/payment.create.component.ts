@@ -21,6 +21,7 @@ payment:IPayment = {
   modePayment:'',
   cash:0,
   person:'',
+  obs:''
 
 }
 

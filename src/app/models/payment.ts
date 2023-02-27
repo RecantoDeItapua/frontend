@@ -8,5 +8,6 @@ export interface IPayment {
     cash:number;
     person:any;
     personName?:string
+    obs?:string
  
 }

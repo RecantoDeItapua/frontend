@@ -19,6 +19,7 @@ export class PaymentReadComponent implements OnInit{
     datePayment:'',
     finishPayment:'',
     modePayment:'',
+    obs:''
   }
 
   @ViewChild('content', {static: false})element: ElementRef;

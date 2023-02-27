@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent implements OnInit{
+  loading;
   authority:boolean = false;
   role:string=''
   constructor(
@@ -23,7 +24,7 @@ export class NavComponent implements OnInit{
   ngOnInit(): void {
     this.role =  localStorage.getItem('roles')
     this.checkAuthorite(this.role)
-   
+
   }
 
   checkAuthorite(auth: string):boolean {

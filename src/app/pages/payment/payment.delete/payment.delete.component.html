@@ -3,7 +3,7 @@
       <mat-icon>print</mat-icon>
     </button>   
       <form class="form"  id="content" #content>
-        <h3>Associação Comunitária Dos Moradores Do Loteamento Recanto De Itapuã</h3>
+        <h1>Deletar</h1>
           
               <div class="full-width">
                   <mat-label>PAGAMENTO:</mat-label>
@@ -77,6 +77,16 @@
                    
                     >
                </div>
+
+               <div class="full-width">
+                <mat-label>Observações</mat-label>
+                <input
+                [disabled]="true"
+                [(ngModel)]="payment.obs"
+                name="obs"
+                 matInput
+                >
+              </div>
       </form>
       <div class="buttons">
         <button (click)="delete()" mat-button color="warn" >Deletar</button>

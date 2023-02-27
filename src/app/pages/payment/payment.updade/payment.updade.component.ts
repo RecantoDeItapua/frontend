@@ -21,7 +21,8 @@ export class PaymentUpdadeComponent implements OnInit{
     modePayment:'',
     cash:0,
     person:'',
-    personName:''
+    personName:'',
+    obs:''
   
   }
 

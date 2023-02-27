@@ -20,6 +20,7 @@ export class PaymentDeleteComponent {
     datePayment:'',
     finishPayment:'',
     modePayment:'',
+    obs:''
   }
 
   @ViewChild('content', {static: false})element: ElementRef;

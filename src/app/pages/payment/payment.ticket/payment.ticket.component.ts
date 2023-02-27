@@ -49,7 +49,7 @@ export class PaymentTicketComponent {
      }
 
      printPaymentPDF():void {
-      let pdf = new jsPDF('l','pt','a4');
+      let pdf = new jsPDF('p','pt','a4');
       
     
       pdf.html(this.element.nativeElement, {
