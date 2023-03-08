@@ -6,8 +6,10 @@ export interface IPayment {
     modePayment?:any;
     finishPayment?:any;
     cash:number;
+    discount?:number;
     person:any;
     personName?:string
-    obs?:string
+    obs?:string,
+    adress?:string
  
 }

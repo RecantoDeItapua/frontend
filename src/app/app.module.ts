@@ -82,6 +82,10 @@ import { ConciergeUpdateComponent } from './pages/concierge/concierge.update/con
 import { ResidentReadComponent } from './pages/resident/resident.read/resident.read.component';
 import { PaymentDeleteComponent } from './pages/payment/payment.delete/payment.delete.component';
 import { PaymentTicketComponent } from './pages/payment/payment.ticket/payment.ticket.component';
+import { AdressListComponent } from './pages/adress/adress.list/adress.list.component';
+import { AdressCreateComponent } from './pages/adress/adress.create/adress.create.component';
+import { AdressUpdateComponent } from './pages/adress/adress.update/adress.update.component';
+import { AdressDeleteComponent } from './pages/adress/adress.delete/adress.delete.component';
 
 
 
@@ -129,7 +133,11 @@ import { PaymentTicketComponent } from './pages/payment/payment.ticket/payment.t
     ConciergeUpdateComponent,
     ResidentReadComponent,
     PaymentDeleteComponent,
-    PaymentTicketComponent
+    PaymentTicketComponent,
+    AdressListComponent,
+    AdressCreateComponent,
+    AdressUpdateComponent,
+    AdressDeleteComponent
     
 
   ],

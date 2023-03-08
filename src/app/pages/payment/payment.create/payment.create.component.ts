@@ -1,3 +1,5 @@
+import { IAdress } from './../../../models/adress';
+import { AdressService } from './../../../services/adress.service';
 import { Router } from '@angular/router';
 import { IPayment } from './../../../models/payment';
 import { PaymentService } from 'src/app/services/payment.service';
@@ -14,17 +16,17 @@ import { ToastrService } from 'ngx-toastr';
 })
 
 export class PaymentCreateComponent implements OnInit {
-
 payment:IPayment = {
   title:'',
   situation:'',
   modePayment:'',
   cash:0,
   person:'',
+  adress:'',
   obs:''
 
 }
-
+  adressList: IAdress[] = []
   residents: IResident[] = [];
   FILTERD: IResident[] =[]
 
@@ -40,12 +42,14 @@ modePayment: FormControl = new FormControl(null, Validators.required);
    constructor(
     private residentService: ResidentService,
     private paymentService: PaymentService,
+    private adressService: AdressService,
     private toast: ToastrService,
     private router: Router
     ) {}
 
    ngOnInit(): void {
      this.findAllResidents();
+     this.findAllAdress();
    }
 
    findAllResidents():void {
@@ -54,8 +58,14 @@ modePayment: FormControl = new FormControl(null, Validators.required);
       this.FILTERD = response;
     })
    }
-
+   
+   findAllAdress(): void {
+    this.adressService.findAll().subscribe(response => {
+      this.adressList = response;
+    })
+   }
    create():void {
+   
     this.paymentService.create(this.payment).subscribe(response => {
         this.router.navigate(['payments'])
         this.toast.success("Pagamento criado com sucesso");
@@ -70,8 +80,18 @@ modePayment: FormControl = new FormControl(null, Validators.required);
    createGroup():void {
     this.residents.map(resident => {
         this.payment.person = resident.id;
-        this.paymentService.create(this.payment).subscribe(response => { }, 
-          ex => {this.toast.error(ex.error.error)})
+
+        this.adressList.map( adress => {
+          if(adress.person == resident.id) {
+            this.payment.adress = adress.adress
+
+            this.paymentService.create(this.payment).subscribe(response => { }, 
+              ex => {this.toast.error(ex.error.error)})
+          }
+          
+        
+        })
+        
     })
     this.router.navigate(['payments'])
     this.toast.success("Pagamento criado com sucesso");

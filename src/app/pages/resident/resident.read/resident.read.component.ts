@@ -17,6 +17,7 @@ export class ResidentReadComponent {
     cpf:'',
     email:'',
     phoneNumber:'',
+    discount:0,
     adress:'',
     password:'',
     profiles: [],

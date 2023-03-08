@@ -20,6 +20,7 @@ export class ResidentUpdateComponent implements OnInit{
     cpf:'',
     email:'',
     phoneNumber:'',
+    discount:0,
     adress:'',
     password:'',
     profiles: [],

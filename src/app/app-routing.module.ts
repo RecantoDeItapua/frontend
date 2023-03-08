@@ -1,3 +1,7 @@
+import { AdressDeleteComponent } from './pages/adress/adress.delete/adress.delete.component';
+import { AdressUpdateComponent } from './pages/adress/adress.update/adress.update.component';
+import { AdressCreateComponent } from './pages/adress/adress.create/adress.create.component';
+import { AdressListComponent } from './pages/adress/adress.list/adress.list.component';
 import { PaymentTicketComponent } from './pages/payment/payment.ticket/payment.ticket.component';
 import { PaymentDeleteComponent } from './pages/payment/payment.delete/payment.delete.component';
 import { ConciergeUpdateComponent } from './pages/concierge/concierge.update/concierge.update.component';
@@ -94,6 +98,12 @@ const routes: Routes = [
     {path: 'concierges/update/:id', component: ConciergeUpdateComponent},
     {path: 'concierges/read/:id', component: ConciergeReadComponent},
     {path: 'concierges/delete/:id', component: ConciergeDeleteComponent},
+
+    {path: 'adress', component: AdressListComponent},
+    {path: 'adress/create', component: AdressCreateComponent},
+    {path: 'adress/update/:id', component: AdressUpdateComponent},
+    {path: 'adress/delete/:id', component: AdressDeleteComponent},
+   
    
    
   ]},

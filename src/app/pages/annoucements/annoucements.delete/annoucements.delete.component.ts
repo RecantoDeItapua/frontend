@@ -40,7 +40,6 @@ export class AnnoucementsDeleteComponent implements OnInit{
     findById():void {
       this.service.findById(this.annoucement.id).subscribe(response => {
         this.annoucement = response;
-        console.log(response)
       })
 
     }

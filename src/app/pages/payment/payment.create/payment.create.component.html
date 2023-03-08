@@ -73,6 +73,27 @@
                 </mat-select>
              </mat-form-field>
 
+             
+             <mat-form-field appearance="fill" >
+              <mat-label>Selecione um endereço</mat-label>
+              <mat-select
+               name="adress"
+               required 
+               [(ngModel)]="payment.adress"
+               
+                >
+                  <mat-form-field>
+                      <mat-label>Pesquisar</mat-label>
+                      <input     matInput (input)="residentFilter($event)" placeholder="Buscar um residente"  #input>
+                    </mat-form-field>
+
+                <mat-option *ngFor="let adress of adressList"
+                   value="{{adress.adress}}">{{adress.adress}}
+                  </mat-option>
+              </mat-select>
+            </mat-form-field>
+             
+
              <mat-form-field class="full-width">
               <mat-label>Observações</mat-label>
               <input

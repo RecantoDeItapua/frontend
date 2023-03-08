@@ -1,0 +1,30 @@
+
+<div class="container">
+    
+    <form class="form">
+        <h1>Deletar Endereço</h1>
+
+            <mat-form-field appearance="fill">
+              <mat-label>Endereço</mat-label>
+              <mat-icon matSuffix>
+                <span class="material-icons-outlined"> drive_file_rename_outline </span>
+             </mat-icon>
+              <textarea 
+              [disabled]="true"
+              [(ngModel)]="adress.adress"
+               name="adress"
+               matInput >
+              </textarea>
+            </mat-form-field>
+          
+         <div class="buttons">
+            <button (click)="delete()" mat-button color="warn" >Deletar</button>
+            <button (click)="goBack()" mat-button color="primary">Voltar</button>
+          </div>
+          
+    </form>
+    <div class="aside">
+        <img src="../../../../assets/delete.svg" alt="">
+    </div>
+</div>
+

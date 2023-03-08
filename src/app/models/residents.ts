@@ -5,7 +5,8 @@ export interface IResident {
     email:string;
     phoneNumber?:string
     adress?:string
-    password:string
+    password:string,
+    discount?:number,
     profiles: string[],
     date:any;
 }
