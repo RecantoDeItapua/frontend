@@ -55,6 +55,15 @@ export class AdressListComponent {
   
  }
 
+ showComponentByAdm():boolean {
+  if( !this.role.includes('ROLE_ADMIN') ) {
+    return false
+  }
+  else {
+    return true
+  }
+}
+
  
 
  applyFilter(event: Event) {

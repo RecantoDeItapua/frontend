@@ -67,8 +67,7 @@ name: FormControl = new FormControl(null, Validators.minLength(3));
         this.resident.profiles.push(profile)
       }
     }
-
-
+    
 
     fieldValidate(): boolean {
       return this.name.valid 

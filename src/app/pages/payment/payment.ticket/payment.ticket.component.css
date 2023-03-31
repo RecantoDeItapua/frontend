@@ -2,7 +2,6 @@
     width:700px; 
     min-width: 700px;
     margin: auto;
-    margin-bottom: 3rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -15,26 +14,16 @@
 
 
 .form {
-    flex-direction: column;
-    display: flex;
-    justify-content:center;
-    margin-top: .5rem;
-    width: 500px;
-    border: .5px solid #69553B;
+    margin-top: 1rem;
     border-radius: .5rem;
-    padding: .3rem;
-    margin-bottom: .1rem;
+    margin-bottom: .5rem;
     background-color: #FFF;
+    width: 500px;
+    border: .5px solid #000;
+    margin-left: 10px;
+    padding-left: .5rem;
 }
 
-.form input {
-    background-color: transparent;
-    border: none;
-    border-bottom: 1px solid #69553B;
-    color: black;
-    margin-left: .5rem;
-    font-size: .7rem;
-}
 
 .print {
     display: flex;
@@ -56,11 +45,16 @@
 h3{
     color: #69553B;
     text-align: center;
-    font-size: .8rem;
-    
+    font-size: .8rem; 
+    margin-bottom: -3px;
 }
 mat-label {
     color:#69553B;
     font-size: .7rem;
+    font-weight: bold;
+}
+span {
+    font-size: .7rem;
+    font-weight:400;
 }
 

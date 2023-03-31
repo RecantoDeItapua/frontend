@@ -4,95 +4,66 @@
     </button>   
 
     <div id="content" #content >
-      <form class="form"  *ngFor="let element of ELEMENT_DATA">
+      <div class="form"  *ngFor="let element of ELEMENT_DATA">
         <h3>Associação Comunitária Dos Moradores Do Loteamento Recanto De Itapuã</h3>
           
               <div class="full-width">
-                  <mat-label>PAGAMENTO:</mat-label>
-                <input
-                [disabled]="true"
-                [(ngModel)]="element.title"
-                name="title"
-                 matInput
-                >
+                  <mat-label>TITULO:</mat-label>
+                <span>
+                  {{element.title}}
+                </span>
               </div>
   
               <div class="full-width">
-                  <mat-label>VALOR:</mat-label>
-                  <input
-                  [(ngModel)]="element.cash"
-                  name="payment"
-                  matInput
-                  [disabled]="true"
-                   >
-              </div>
-  
-              <div class="full-width">
-                <mat-label>PAGAMENTO:</mat-label>
-                <input
-                [value]="modePayment(element.modePayment)"
-                name="modePayment"
-                matInput
-                [disabled]="true"
-                 >
+                <mat-label>VALOR:</mat-label>
+              <span>
+                {{element.cash}}
+              </span>
             </div>
   
-              <div class="full-width">
-                  <mat-label>DATA DE ABERTURA:</mat-label>
-                  <input
-                  [(ngModel)]="element.datePayment"
-                  name="datePayment"
-                   matInput
-                   [disabled]="true"
-                  >
-                </div>
+            <div class="full-width">
+              <mat-label>TIPO PAGAMENTO:</mat-label>
+            <span>
+              {{modePayment(element.modePayment)}}
+            </span>
+          </div>
   
-              <div appearance="fill" >
-                  
-                  <mat-label>SITUAÇÃO:</mat-label>
-                  <input
-                  [value]="situationReturn(element.situation)"
-                  name="situation"
-                  matInput
-                  [disabled]="true"
-                  >
-               
-               </div>
+          <div class="full-width">
+            <mat-label>DATA ABERTURA:</mat-label>
+          <span>
+            {{element.datePayment}}
+          </span>
+        </div>
   
-               <div class="full-width">
-                  <mat-label>DATA FECHAMENTO:</mat-label>
-                  <input
-                  [(ngModel)]="element.finishPayment"
-                  name="finishPayment"
-                   matInput
-                   [disabled]="true"
-                  >
-                </div>
-  
-               <div appearance="fill" >
-                  <mat-label>NOME</mat-label>
-                  <input
-                   name="personName"
-                   [(ngModel)]="element.personName"
-                   matInput
-                   [disabled]="true"
-                   
-                    >
-               </div>
-
-               <mat-form-field class="full-width">
-                <mat-label>Observações</mat-label>
-                <input
-                [(ngModel)]="element.obs"
-                name="obs"
-                 matInput
-                 [disabled]="true"
-                >
-              </mat-form-field>
-      </form>
-      <div class="buttons">
-       
+        <div class="full-width">
+          <mat-label>SITUAÇÃO:</mat-label>
+        <span>
+          {{situationReturn( element.situation)}}
+        </span>
       </div>
+  
+      <div class="full-width">
+        <mat-label>DATA FECHAMENTO:</mat-label>
+      <span>
+        {{element.finishPayment}}
+      </span>
+    </div>
+  
+    <div class="full-width">
+      <mat-label>NOME:</mat-label>
+    <span>
+      {{element.personName}}
+    </span>
+  </div>
+
+  <div class="full-width">
+    <mat-label>OBSERVAÇÕES:</mat-label>
+  <span>
+    {{element.obs}}
+  </span>
+</div>
+      </div>
+
      
   </div>
 </div>

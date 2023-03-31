@@ -72,6 +72,16 @@ ELEMENT_FILTERED: IResident[] = [];
 
   
  }
+
+ showComponentByAdm():boolean {
+  if( !this.role.includes('ROLE_ADMIN') ) {
+    return false
+  }
+  else {
+    return true
+  }
+}
+
  
 
 
