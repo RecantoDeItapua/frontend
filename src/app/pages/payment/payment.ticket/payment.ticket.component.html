@@ -3,8 +3,8 @@
       <mat-icon>print</mat-icon>
     </button>   
 
-    <div id="content" #content >
-      <div class="form"  *ngFor="let element of ELEMENT_DATA">
+    <div id="content" #content class="folha a4_vertical a4_horizontal">
+      <div class="form"  *ngFor="let element of ELEMENT_DATA | paginate: { itemsPerPage: 2, currentPage: p }">
         <h3>Associação Comunitária Dos Moradores Do Loteamento Recanto De Itapuã</h3>
           
               <div class="full-width">
@@ -67,11 +67,17 @@
   <span>
     {{element.obs}}
   </span>
-</div>
-      </div>
-
-     
+ </div>
+ <p class="site"><a href="https://recantodeitapua.com.br">https://recantodeitapua.com.br</a></p>
+      </div>  
+      
   </div>
+ 
+
+  <div class="pagination">        
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
+ 
 </div>
   
   

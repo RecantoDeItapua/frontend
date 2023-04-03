@@ -11,6 +11,8 @@ import { IPayment } from '../../../models/payment';
   styleUrls: ['./payment.ticket.component.css']
 })
 export class PaymentTicketComponent {
+  p: number = 1;
+  collection: any[] =[]
 
   ELEMENT_DATA: IPayment[] = [];
 
