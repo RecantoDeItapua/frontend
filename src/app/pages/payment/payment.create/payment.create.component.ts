@@ -27,6 +27,7 @@ payment:IPayment = {
 
 }
   adressList: IAdress[] = []
+  FILTERED_ADRESS: IAdress[] =[]
   residents: IResident[] = [];
   FILTERD: IResident[] =[]
 
@@ -62,6 +63,7 @@ modePayment: FormControl = new FormControl(null, Validators.required);
    findAllAdress(): void {
     this.adressService.findAll().subscribe(response => {
       this.adressList = response;
+      this.FILTERED_ADRESS = response;
     })
    }
    create():void {
@@ -112,6 +114,14 @@ modePayment: FormControl = new FormControl(null, Validators.required);
     const filterValue = (event.target as HTMLInputElement).value;
      this.residents = this.FILTERD.filter(element =>{
       return element.name.toLowerCase().includes(filterValue.toLowerCase());
+     })
+     
+  }
+
+  adressFilter(event: Event) {
+    let filterValue = (event.target as HTMLInputElement).value;
+     this.adressList = this.FILTERED_ADRESS.filter(element =>{
+      return element.adress.toLowerCase().includes(filterValue.toLowerCase());
      })
      
   }

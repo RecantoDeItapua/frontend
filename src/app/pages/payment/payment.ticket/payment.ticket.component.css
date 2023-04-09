@@ -14,14 +14,14 @@
 
 
 .form {
-    margin: 80px 0 40px 0;
+    margin-bottom: 90px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
     border-radius: .5rem;
     background-color: #FFF;
-    width: 500px;
+    width: 550px;
     border: 1px solid #000;
     padding-left: .5rem;
 
@@ -46,9 +46,13 @@
 
 
 h3{
-    color: #69553B;
+
     text-align: center;
-    font-size: .8rem; 
+    font-size: 1rem; 
+}
+
+h1 {
+    width: 100%;
 }
 mat-label {
     color:#69553B;
@@ -56,7 +60,7 @@ mat-label {
     font-weight: bold;
 }
 span {
-    font-size: .7rem;
+    font-size: .9rem;
     font-weight:400;
 }
 

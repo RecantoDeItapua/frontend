@@ -16,20 +16,18 @@
          >
         </mat-form-field>
 
-        <mat-form-field id="field" class="full-width">
+          <mat-form-field id="field" class="full-width">
             <mat-label class="color">Senha</mat-label>
             <input
-             required
-             [(ngModel)]="creds.password"
-             [formControl]="password"
-             name="password"
-             type="password"
-             matInput
-           
-             
-
-             >
+            [(ngModel)]="creds.password"
+            [formControl]="password"
+             required matInput [type]="hide ? 'password' : 'text'" 
+             name="password" type="password">
+            <span class="eyes" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </span>
           </mat-form-field>
+
       <button 
         [disabled]="!fieldValidator()" 
         mat-stroked-button

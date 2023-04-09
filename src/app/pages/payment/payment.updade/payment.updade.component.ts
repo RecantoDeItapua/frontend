@@ -15,6 +15,8 @@ import { FormControl, Validators } from '@angular/forms';
 
 
 export class PaymentUpdadeComponent implements OnInit{
+  role:string = ''
+
   payment:IPayment = {
     title:'',
     situation:'',
@@ -46,6 +48,7 @@ export class PaymentUpdadeComponent implements OnInit{
      ngOnInit(): void {
        this.findAllResidents();
        this.payment.id = this.routes.snapshot.paramMap.get('id');
+       this.role = localStorage.getItem('roles')
        this.findById();
      }
 
@@ -96,6 +99,16 @@ export class PaymentUpdadeComponent implements OnInit{
              this.cash.valid && 
              this.personName.valid
     }
+
+    showComponentByAdmin() {
+      if(this.role.includes('ROLE_ADMIN')) {
+        return true
+      }
+      else {
+        return false
+      }
+  }
+  
     
   
      goBack():void {

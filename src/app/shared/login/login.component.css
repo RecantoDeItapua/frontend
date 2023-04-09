@@ -60,3 +60,9 @@ button span {
     color: green;
     
 }
+
+.eyes {
+    margin: 0.6rem;
+    cursor: pointer;
+    color:green ;
+}

@@ -15,6 +15,7 @@ import { AuthService } from './../../services/auth.service';
  
 })
 export class LoginComponent implements OnInit {
+  hide = true;
   colorControl = new FormControl('primary' as ThemePalette);
  
 creds: ICredentials = {
