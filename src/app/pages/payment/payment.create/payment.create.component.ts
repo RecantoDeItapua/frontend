@@ -66,8 +66,15 @@ modePayment: FormControl = new FormControl(null, Validators.required);
       this.FILTERED_ADRESS = response;
     })
    }
+
+   getValue(id) {
+    this.payment.person = id;
+   }
+   getAdress(ads) {
+    this.payment.adress = ads
+   }
+
    create():void {
-   
     this.paymentService.create(this.payment).subscribe(response => {
         this.router.navigate(['payments'])
         this.toast.success("Pagamento criado com sucesso");
@@ -112,6 +119,7 @@ modePayment: FormControl = new FormControl(null, Validators.required);
      
   residentFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
+    console.log(filterValue)
      this.residents = this.FILTERD.filter(element =>{
       return element.name.toLowerCase().includes(filterValue.toLowerCase());
      })
