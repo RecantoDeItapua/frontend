@@ -5,8 +5,12 @@
 
     <div id="content" #content class="folha a4_vertical a4_horizontal">
       <div class="form"  *ngFor="let element of ELEMENT_DATA | paginate: { itemsPerPage: 2, currentPage: p }">
-        <h3>Associação Comunitária Dos Moradores Do Loteamento Recanto De Itapuã</h3>
-        <h1>RECIBO</h1>
+        <div class="form-header">
+          <h1>RECIBO</h1>
+          <img class="logo" src="../../../../assets/identidade/logo-semfundo-50.png">
+
+        </div>
+      
           
               <div class="full-width">
                   <mat-label>TITULO:</mat-label>

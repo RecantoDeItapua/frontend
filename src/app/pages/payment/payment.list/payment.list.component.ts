@@ -3,6 +3,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { IPayment } from './../../../models/payment';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { PaymentService } from 'src/app/services/payment.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -15,7 +16,7 @@ export class PaymentListComponent implements OnInit{
   filter:any = ''
   page:number = 0
   ELEMENT_DATA: IPayment[] = [];
-  FILTERED_DATA: IPayment[] = [];
+  FILTERED_DATA;
   
   
   displayedColumns: string[] = [ 'title', 'personName', 'value', 'acctions'];
@@ -24,7 +25,7 @@ export class PaymentListComponent implements OnInit{
   @ViewChild(MatPaginator) paginator: MatPaginator;
  
 
-    constructor(private service: PaymentService) {}
+    constructor(private service: PaymentService, private router: Router,) {}
 
 
     ngOnInit(): void {
@@ -33,10 +34,15 @@ export class PaymentListComponent implements OnInit{
       this.findAll();
     }
 
+    gerarBoleto():void {
+      localStorage.setItem('payment', JSON.stringify(this.FILTERED_DATA))
+    }
+
 
     findAll(): void {
       this.service.findAll().subscribe(response => {
         this.ELEMENT_DATA = response;
+        this.FILTERED_DATA = response
         this.dataSource = new MatTableDataSource<IPayment>(response);
         this.dataSource.paginator = this.paginator;
         this.page = response.length
@@ -73,6 +79,7 @@ export class PaymentListComponent implements OnInit{
       })
       this.dataSource = new MatTableDataSource<IPayment>(list);
       this.dataSource.paginator = this.paginator;
+      this.FILTERED_DATA = list
 
      }
 
@@ -125,5 +132,11 @@ export class PaymentListComponent implements OnInit{
     applyFilter(event: Event) {
       const filterValue = (event.target as HTMLInputElement).value;
       this.dataSource.filter = filterValue.trim().toLowerCase();
+
+      this.FILTERED_DATA = this.FILTERED_DATA.filter(element =>{
+        return element.title.toLowerCase().includes(filterValue.toLowerCase());
+       
+       })
+  
     }
 }

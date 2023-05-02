@@ -5,7 +5,7 @@
     <button class="print" routerLink="report" *ngIf="showComponentByUser()">
       <mat-icon>print</mat-icon>
    </button> 
-   <button routerLink="ticket" *ngIf="showComponentByUser()">Gerar boletos</button>
+   <button routerLink="ticket" (click)="gerarBoleto()" *ngIf="showComponentByUser()">Gerar boletos</button>
 
   </div>
  

@@ -27,6 +27,21 @@
 
 }
 
+.form-header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: .5rem;
+}
+
+.logo {
+    width: 100px;
+    height: 80px;
+    
+  
+
+}
+
 
 .print {
     display: flex;

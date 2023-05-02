@@ -28,11 +28,7 @@ export class PaymentTicketComponent {
 
 
     findAll(): void {
-      this.service.findAll().subscribe(response => {
-        this.ELEMENT_DATA = response;
-        this.ELEMENT_DATA = response;
-      
-      })
+        this.ELEMENT_DATA = JSON.parse(localStorage.getItem('payment'))
      }
 
      situationReturn(situatin:any): string {
