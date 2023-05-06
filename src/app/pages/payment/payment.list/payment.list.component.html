@@ -2,7 +2,7 @@
 
 <div class="mat-elevation-z8 container" id="content" #content>  
   <div class="buttons">
-    <button class="print" routerLink="report" *ngIf="showComponentByUser()">
+    <button class="print" routerLink="report" (click)="gerarBoleto()" *ngIf="showComponentByUser()">
       <mat-icon>print</mat-icon>
    </button> 
    <button routerLink="ticket" (click)="gerarBoleto()" *ngIf="showComponentByUser()">Gerar boletos</button>
