@@ -2,102 +2,80 @@
   <button class="print" (click)="printPaymentPDF()">
     <mat-icon>print</mat-icon>
   </button>   
-    <form class="form"  id="content" #content>
-      <h3>Associação Comunitária Dos Moradores Do Loteamento Recanto De Itapuã</h3>
+
+  <div id="content" #content class="folha a4_vertical a4_horizontal">
+    <div class="form">
+      <div class="form-header">
+        <h1>RECIBO</h1>
+        <img class="logo" src="../../../../assets/identidade/logo-semfundo-50.png">
+
+      </div>
+    
         
             <div class="full-width">
-                <mat-label>PAGAMENTO:</mat-label>
-              <input
-              [disabled]="true"
-              [(ngModel)]="payment.title"
-              name="title"
-               matInput
-              >
+                <mat-label>TITULO:</mat-label>
+              <span>
+                {{payment.title}}
+              </span>
             </div>
 
             <div class="full-width">
-                <mat-label>VALOR:</mat-label>
-                <input
-                [(ngModel)]="payment.cash"
-                name="payment"
-                matInput
-                [disabled]="true"
-                 >
-            </div>
-
-            <div class="full-width">
-              <mat-label>PAGAMENTO:</mat-label>
-              <input
-              [(ngModel)]="payment.modePayment"
-              name="modePayment"
-              matInput
-              [disabled]="true"
-               >
+              <mat-label>VALOR:</mat-label>
+            <span>
+              R$ {{payment.cash}}.00
+            </span>
           </div>
 
-            <div class="full-width">
-                <mat-label>DATA DE ABERTURA:</mat-label>
-                <input
-                [(ngModel)]="payment.datePayment"
-                name="datePayment"
-                 matInput
-                 [disabled]="true"
-                >
-              </div>
+          <div class="full-width">
+            <mat-label>TIPO PAGAMENTO:</mat-label>
+          <span>
+            {{modePayment(payment.modePayment)}}
+          </span>
+        </div>
 
-            <div appearance="fill" >
-                
-                <mat-label>SITUAÇÃO:</mat-label>
-                <input
-                [(ngModel)]="payment.situation"
-                name="situation"
-                matInput
-                [disabled]="true"
-                >
-             
-             </div>
+        <div class="full-width">
+          <mat-label>DATA ABERTURA:</mat-label>
+        <span>
+          {{payment.datePayment}}
+        </span>
+      </div>
 
-             <div class="full-width">
-                <mat-label>DATA FECHAMENTO:</mat-label>
-                <input
-                [(ngModel)]="payment.finishPayment"
-                name="finishPayment"
-                 matInput
-                 [disabled]="true"
-                >
-              </div>
-
-             <div appearance="fill" >
-                <mat-label>NOME</mat-label>
-                <input
-                 name="personName"
-                 [(ngModel)]="payment.personName"
-                 matInput
-                 [disabled]="true"
-                 
-                  >
-             </div>
-
-             <div class="full-width">
-              <mat-label>Endereço</mat-label>
-              <input
-              [(ngModel)]="payment.adress"
-              name="adress"
-               matInput
-              >
-            </div>
-
-             <div class="full-width">
-              <mat-label>Observações</mat-label>
-              <input
-              [(ngModel)]="payment.obs"
-              name="obs"
-               matInput
-              >
-            </div>
-    </form>
-    <div class="buttons">
-      <button (click)="goBack()" mat-button color="primary">Voltar</button>
+      <div class="full-width">
+        <mat-label>SITUAÇÃO:</mat-label>
+      <span>
+        {{modePayment( payment.situation)}}
+      </span>
     </div>
-   
+
+    <div class="full-width">
+      <mat-label>DATA FECHAMENTO:</mat-label>
+    <span>
+      {{payment.finishPayment}}
+    </span>
+  </div>
+
+  <div class="full-width">
+    <mat-label>NOME:</mat-label>
+  <span>
+    {{payment.personName}}
+  </span>
+</div>
+<div class="full-width">
+  <mat-label>ENDEREÇO:</mat-label>
+<span>
+  {{payment.adress}}
+</span>
+</div>
+
+<div class="full-width">
+  <mat-label>OBSERVAÇÕES:</mat-label>
+<span>
+  {{payment.obs}}
+</span>
+</div>
+<p class="site"><a href="https://recantodeitapua.com.br">https://recantodeitapua.com.br</a></p>
+    </div>  
+    
+</div>
+
 </div>

@@ -3,6 +3,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { OccurrenceService } from 'src/app/services/occurrence.service';
 
 import { IOccurrence } from './../../../models/occurences';
+import { PaymentService } from 'src/app/services/payment.service';
 
 @Component({
   selector: 'app-occurrence.list',
@@ -20,7 +21,7 @@ export class OccurrenceListComponent implements OnInit {
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
-    constructor(private service: OccurrenceService) {}
+    constructor(private service: OccurrenceService,private payment: PaymentService) {}
 
 
     ngOnInit(): void {

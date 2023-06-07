@@ -25,13 +25,15 @@ export class PaymentListComponent implements OnInit{
   @ViewChild(MatPaginator) paginator: MatPaginator;
  
 
-    constructor(private service: PaymentService, private router: Router,) {}
+    constructor(private service: PaymentService, private router: Router) {}
 
 
     ngOnInit(): void {
       this.filter =  localStorage.getItem('id')
       this.role = localStorage.getItem('roles')
       this.findAll();
+     
+      
     }
 
     gerarBoleto():void {
@@ -76,6 +78,25 @@ export class PaymentListComponent implements OnInit{
           if(payment.situation == situatin) {
             list.push(payment)
           }
+      })
+      this.dataSource = new MatTableDataSource<IPayment>(list);
+      this.dataSource.paginator = this.paginator;
+      this.FILTERED_DATA = list
+      
+
+     }
+
+     orderByDate(date: any ): void {
+      let list: IPayment[] = [];
+     
+       this.ELEMENT_DATA.map(payment => {
+        if(payment.finishPayment) {
+          if(date == payment.finishPayment.slice(3) ) {
+            list.push(payment)
+          }
+         
+        }
+        
       })
       this.dataSource = new MatTableDataSource<IPayment>(list);
       this.dataSource.paginator = this.paginator;

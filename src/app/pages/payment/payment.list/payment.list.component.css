@@ -77,6 +77,10 @@ mat-form-field {
     background-color:#DDA329;
 }
 
+.mat-form-field {
+    width: 400px;
+}
+
 
 .header button {
     align-self: flex-end;

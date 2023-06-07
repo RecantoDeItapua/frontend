@@ -14,8 +14,28 @@
      <button routerLink="create" mat-raised-button >Novo pagamento</button>
     </div>
     <mat-radio-group >
+      <div class="mat-form-field">
+      <mat-form-field>
+        <mat-label>Selecione pela data de pagamento</mat-label>
+        <mat-select >
+          <mat-option (click)="orderByDate('01-2023')" value="01-2023">01-2023</mat-option>
+          <mat-option (click)="orderByDate('02-2023')" value="02-2023">02-2023</mat-option>
+          <mat-option (click)="orderByDate('03-2023')" value="03-2023">03-2023</mat-option>
+          <mat-option (click)="orderByDate('04-2023')" value="04-2023">04-2023</mat-option>
+          <mat-option (click)="orderByDate('05-2023')" value="05-2023">05-2023</mat-option>
+          <mat-option (click)="orderByDate('06-2023')" value="06-2023">06-2023</mat-option>
+          <mat-option (click)="orderByDate('07-2023')" value="07-2023">07-2023</mat-option>
+          <mat-option (click)="orderByDate('08-2023')" value="08-2023">08-2023</mat-option>
+          <mat-option (click)="orderByDate('09-2023')" value="09-2023">09-2023</mat-option>
+          <mat-option (click)="orderByDate('10-2023')" value="10-2023">10-2023</mat-option>
+          <mat-option (click)="orderByDate('11-2023')" value="11-2023">11-2023</mat-option>
+          <mat-option (click)="orderByDate('12-2023')" value="12-2023">12-2023</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
         <mat-radio-button (click)="orderBySituation(0)" value="0">ABERTO</mat-radio-button>
         <mat-radio-button  (click)="orderBySituation(1)" value="1">ENCERRADO</mat-radio-button>
+       
       </mat-radio-group> 
     
    
