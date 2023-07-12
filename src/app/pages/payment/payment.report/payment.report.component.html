@@ -25,7 +25,7 @@
         <th >Forma</th>
       </tr>
     </thead>
-    <tbody *ngFor="let element of ELEMENT_DATA">
+    <tbody *ngFor="let element of ELEMENT_DATA | paginate: { itemsPerPage: 13, currentPage: p }">
       <tr>
         <td>{{element.id}}</td>
         <td>{{element.title}}</td>
@@ -34,10 +34,16 @@
         <td>{{situationReturn(element.situation)}}</td>
         <td>{{modePayment(element.modePayment)}}</td>
       </tr>
+      
     </tbody>
+   
   </table>
   
 
- </div>
+ 
 
+ </div>
+ <div class="pagination">        
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>
 </div>

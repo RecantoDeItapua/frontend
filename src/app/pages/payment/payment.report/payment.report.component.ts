@@ -11,7 +11,9 @@ import { IPayment } from '../../../models/payment';
   styleUrls: ['./payment.report.component.css']
 })
 export class PaymentReportComponent implements OnInit {
-
+  p: number = 1;
+  collection: any[] =[]
+  
   page:number = 0
   ELEMENT_DATA: IPayment[] = [];
 
