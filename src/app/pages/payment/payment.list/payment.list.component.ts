@@ -36,9 +36,7 @@ export class PaymentListComponent implements OnInit{
       
     }
 
-    gerarBoleto():void {
-      localStorage.setItem('payment', JSON.stringify(this.FILTERED_DATA))
-    }
+ 
 
 
     findAll(): void {
@@ -159,5 +157,9 @@ export class PaymentListComponent implements OnInit{
        
        })
   
+    }
+
+    gerarBoleto():void {
+      localStorage.setItem('payment', JSON.stringify(this.FILTERED_DATA))
     }
 }
