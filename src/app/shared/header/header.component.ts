@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit{
 name = '';
+condition:boolean = true
   constructor() {}
 
   ngOnInit(): void {
     this.name = localStorage.getItem('user');
+    if(localStorage.getItem('id') === '224') {
+      this.showTamplate()
+    }
+  }
+
+  showTamplate() {
+    this.condition = false
   }
 }
+
+

@@ -48,7 +48,12 @@ password = new FormControl(null, Validators.minLength(3));
        localStorage.setItem('id', token[2]);
        localStorage.setItem('user', token[3]);
        localStorage.setItem('roles', authorite[1].replace(']', ' '));
-       this.router.navigate(['home']);
+       if(localStorage.getItem('id') === '224') {
+        this.router.navigate(['payments']);
+       }else {
+        this.router.navigate(['home']);
+       }
+      
         
     }, () => {
       this.tost.error('Usuário e/ou senha inválidos!!')

@@ -14,6 +14,8 @@ import { Router } from '@angular/router';
 export class PaymentListComponent implements OnInit{
   role:string = ''
   filter:any = ''
+  id:string = ''
+  condition:boolean = true
   page:number = 0
   ELEMENT_DATA: IPayment[] = [];
   FILTERED_DATA;
@@ -29,15 +31,19 @@ export class PaymentListComponent implements OnInit{
 
 
     ngOnInit(): void {
-      this.filter =  localStorage.getItem('id')
+     this.id =  localStorage.getItem('id')
+      this.filter =  this.id
       this.role = localStorage.getItem('roles')
       this.findAll();
-     
+      if(localStorage.getItem('id') === '224') {
+        this.showTamplate()
+      }
       
     }
 
- 
-
+      showTamplate() {
+    this.condition = false
+  }
 
     findAll(): void {
       this.service.findAll().subscribe(response => {
@@ -80,8 +86,6 @@ export class PaymentListComponent implements OnInit{
       this.dataSource = new MatTableDataSource<IPayment>(list);
       this.dataSource.paginator = this.paginator;
       this.FILTERED_DATA = list
-      
-
      }
 
      orderByDate(date: any ): void {
@@ -123,8 +127,8 @@ export class PaymentListComponent implements OnInit{
         return false
       }
 
-      if(this.role.includes('ROLE_EMPLOYEE')
-      ||this.role.includes('ROLE_ADMIN')
+      if(this.role.includes('ROLE_EMPLOYEE') 
+      ||this.role.includes('ROLE_ADMIN')  
       )
        {
           return true
@@ -134,6 +138,7 @@ export class PaymentListComponent implements OnInit{
         return true
       }
 
+    
     }
 
     showComponentByAdmin() {

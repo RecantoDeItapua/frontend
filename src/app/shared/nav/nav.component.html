@@ -79,7 +79,7 @@
       <app-header></app-header>
       <div class="button-painel">
         <span (click)="drawer.toggle()" *ngIf="authority">
-          <mat-icon class="menu" >menu</mat-icon>
+          <mat-icon class="menu" *ngIf="condition" >menu</mat-icon>
         </span>
         <span (click)="logout()" class="logout">Sair</span>
       </div>

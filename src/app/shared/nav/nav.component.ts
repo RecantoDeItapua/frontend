@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 })
 export class NavComponent implements OnInit{
   loading;
+  condition:boolean = true
   authority:boolean = false;
   role:string=''
   constructor(
@@ -24,7 +25,14 @@ export class NavComponent implements OnInit{
   ngOnInit(): void {
     this.role =  localStorage.getItem('roles')
     this.checkAuthorite(this.role)
+    if(localStorage.getItem('id') === '224') {
+      this.showTamplate()
+    }
 
+  }
+
+  showTamplate() {
+    this.condition = false
   }
 
   checkAuthorite(auth: string):boolean {
