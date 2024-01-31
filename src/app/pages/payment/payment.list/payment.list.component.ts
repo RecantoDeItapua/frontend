@@ -19,6 +19,7 @@ export class PaymentListComponent implements OnInit{
   page:number = 0
   ELEMENT_DATA: IPayment[] = [];
   FILTERED_DATA;
+  getYear = new Date().getFullYear().toString();
   
   
   displayedColumns: string[] = [ 'title', 'personName', 'value', 'acctions'];
@@ -31,6 +32,7 @@ export class PaymentListComponent implements OnInit{
 
 
     ngOnInit(): void {
+      console.log(this.getYear)
      this.id =  localStorage.getItem('id')
       this.filter =  this.id
       this.role = localStorage.getItem('roles')
@@ -87,13 +89,19 @@ export class PaymentListComponent implements OnInit{
       this.dataSource.paginator = this.paginator;
       this.FILTERED_DATA = list
      }
-
+    selectDateMinus() {
+      this.getYear = (Number(this.getYear) - 1).toString()
+    }
+    selectDatePlus() {
+      this.getYear = (Number(this.getYear) + 1).toString()
+    }
      orderByDate(date: any ): void {
+      let fullDate = date+'-'+this.getYear;
       let list: IPayment[] = [];
-     
+     console.log(fullDate)
        this.ELEMENT_DATA.map(payment => {
         if(payment.finishPayment) {
-          if(date == payment.finishPayment.slice(3) ) {
+          if(fullDate == payment.finishPayment.slice(3) ) {
             list.push(payment)
           }
          

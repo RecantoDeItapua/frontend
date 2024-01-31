@@ -79,6 +79,7 @@ mat-form-field {
 
 .mat-form-field {
     width: 400px;
+    display: flex;
 }
 
 
@@ -136,6 +137,24 @@ mat-form-field {
     --mdc-protected-button-label-text-color: #C3B4A8;
     font-weight: bold;
   }
+
+.painel-data {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    width: 100px;
+    font-size: 20px;
+    font-weight: 400;
+}
+.data-buttons {
+    display: flex;
+    width: 100px;
+}
+.data-buttons span {
+    margin-right: 10px;
+    font-size: 30px;
+    cursor: pointer;
+}
 
   @media(max-width:756px) {
     .container {
